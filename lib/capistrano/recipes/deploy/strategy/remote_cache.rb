@@ -14,6 +14,7 @@ module Capistrano
         def deploy!
           update_repository_cache
           copy_repository_cache
+          create_revision_file
         end
 
         def check!
