@@ -51,6 +51,11 @@ module Capistrano
           def copy_exclude
             @copy_exclude ||= Array(configuration.fetch(:copy_exclude, []))
           end
+          
+          def create_revision_file
+            File.open(File.join(destination, "REVISION"), "w") { |f| f.puts(revision) }
+          end
+
       end
 
     end
